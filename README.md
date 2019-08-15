@@ -34,8 +34,8 @@ This Stack contains:
 
 - a __GraphQL API__ with an API Key (Use with caution, each key is only valid for 7 days.)
 - a __GraphQL Schema__ with a Mutation that sends an event to Event Bridge
-- an __IAM Role__ that allows AppSync to invoke your Event Bus
-- an __AppSync DataSource__, connecting your API to Event Bus using a HTTP Resolver
+- an __IAM Role__ that allows AppSync to send events to your Event Bus
+- an __AppSync DataSource__, connecting your API to Event Bridge using a HTTP Resolver
 - an __AppSync Resolver__ for a Mutation `putEvent` to send a custom event to Event Bridge
-- an __Event Rule__ that listens for an event comming from AppSync and triggers a Lambda function
+- an __Event Rule__ that listens for the custom event comming from AppSync and triggers a Lambda function
 - a __Lambda__ function that just prints the event, you can confirm it's triggered by Event Bridge by checking the logs on CloudWatch.
