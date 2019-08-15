@@ -4,6 +4,8 @@ Send events via GraphQL to Amazon Event Bridge:
 
 AppSync GraphQL API -> Amazon Event Bridge -> AWS Lambda
 
+![Overview](media.png)
+
 ## Build
 
 To build this app, you need to be in thieroot folder. Then run the following:
