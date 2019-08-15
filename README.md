@@ -8,7 +8,7 @@ AppSync GraphQL API -> Amazon Event Bridge -> AWS Lambda
 
 ## Build
 
-To build this app, you need to be in thieroot folder. Then run the following:
+To build this app, you need run the following commands from the root folder:
 
 ```bash
 npm install -g aws-cdk
