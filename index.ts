@@ -31,21 +31,21 @@ export class AppSyncCdkStack extends cdk.Stack {
     const apiSchema = new CfnGraphQLSchema(this, "ItemsSchema", {
       apiId: appSync2EventBridgeGraphQLApi.attrApiId,
       definition: `type Event {
-        event: String
-        }
-        
-        type Mutation {
-            putEvent(event: String!): Event
-        }
-        
-        type Query {
-            getEvent: Event
-        }
-        
-        schema {
-            query: Query
-            mutation: Mutation
-        }`
+        result: String
+      }
+      
+      type Mutation {
+        putEvent(event: String!): Event
+      }
+      
+      type Query {
+        getEvent: Event
+      }
+      
+      schema {
+        query: Query
+        mutation: Mutation
+      }`
     });
 
     const appsyncEventBridgeRole = new Role(this, "AppSyncEventBridgeRole", {
@@ -109,7 +109,9 @@ export class AppSyncCdkStack extends cdk.Stack {
       ## if the response status code is not 200, then return an error. Else return the body **
       #if($ctx.result.statusCode == 200)
           ## If response is 200, return the body.
-          $ctx.result.body
+          {
+            "result": "$util.parseJson($ctx.result.body)"
+          }
       #else
           ## If response is not 200, append the response to error block.
           $utils.appendError($ctx.result.body, $ctx.result.statusCode)
