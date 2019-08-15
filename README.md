@@ -36,4 +36,4 @@ This Stack contains:
 - an __AppSync DataSource__, connecting your API to Event Bus using a HTTP Resolver
 - an __AppSync Resolver__ for a Mutation `putEvent` to send a custom event to Event Bridge
 - an __Event Rule__ that listens for an event comming from AppSync and triggers a Lambda function
-- a __Lambda__ for a function that just prints the event, you can confirm it's triggered by Event Bridge by checking the logs on CloudWatch.
+- a __Lambda__ function that just prints the event, you can confirm it's triggered by Event Bridge by checking the logs on CloudWatch.
