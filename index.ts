@@ -121,7 +121,7 @@ export class AppSyncCdkStack extends cdk.Stack {
       code: lambda.Code.fromInline(
         "exports.handler = (event, context) => { console.log(event); context.succeed(event); }"
       ),
-      handler: "lambda.handler",
+      handler: "index.handler",
       runtime: lambda.Runtime.NODEJS_8_10
     });
 
