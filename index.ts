@@ -118,6 +118,7 @@ export class AppSyncCdkStack extends cdk.Stack {
       #end`
     });
     putEventResolver.addDependsOn(apiSchema);
+    putEventResolver.addDependsOn(dataSource);
 
     const echoLambda = new lambda.Function(this, "echoFunction", {
       code: lambda.Code.fromInline(
