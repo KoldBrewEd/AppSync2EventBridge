@@ -1,2 +1,4 @@
 node_modules
 cdk.out
+index.js
+packaged.yaml
